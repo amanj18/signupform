@@ -1,18 +1,17 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom'; 
+import React, { useContext } from 'react';
+import { FormContext } from '../FormContext';
 
 const FormPreview = () => {
-    const location = useLocation();
-    const formdata = location.state;
+    const { formData } = useContext(FormContext);
 
     return (
         <div>
             <h1>Form Preview</h1>
-            {formdata ? (
+            {formData ? (
                 <div>
-                    <p>Username : {formdata.username}</p>
-                    <p>Email : {formdata.email}</p>
-                    <p>Password : {formdata.password}</p>
+                    <p><strong>Username:</strong> {formData.username}</p>
+                    <p><strong>Email:</strong> {formData.email}</p>
+                    <p><strong>Password:</strong> {formData.password}</p>
                 </div>
             ) : (
                 <p>No form data available.</p>

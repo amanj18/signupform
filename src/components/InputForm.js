@@ -1,44 +1,42 @@
-import React  , { useState } from 'react'
-import Button from './Button';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-    
+import { FormContext } from '../FormContext';
+import Button from './Button';
+import InputField from './InputField';
+
 const InputForm = () => {
-    
-        const [formData , setFormData] = useState({
-            username: '',
-            email: '',
-            password: ''
-        })
-    
+    const { formData, setFormData } = useContext(FormContext);
+
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
+        setFormData({
+            ...formData,
             [name]: value
-        }));
-    }
+        });
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-    }
+    };
 
-  return (
-    <>
-    <form className='form-container' onSubmit={handleSubmit} >
-        <label>Username : </label>
-        <input type="text" name="username" value={formData.username} onChange={handleChange} required/><br/>
-        <label>Email : </label>
-        <input type="text" name="email" value={formData.email} onChange={handleChange} required/><br/>
-        <label>Password : </label>
-        <input type="text" name="password" value={formData.password} onChange={handleChange} required/><br/>
+    return (
+        <>
+            <form className='form-container' onSubmit={handleSubmit}>
 
-        <Link to="/preview" state={formData}>
-            <Button />
-        </Link>
-    </form>
-    </>
-  )
-}
+                <InputField label="Username" name="username" type="text" value={formData.username} onChange={handleChange} required /><br />
 
-export default InputForm
+                <InputField label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required /><br />
+
+                <InputField label="Password" name="password" type="password" value={formData.password} onChange={handleChange} required /><br />
+                
+                <Link to="/preview" >
+                    <Button />
+                </Link>
+
+            </form>
+        </>
+    );
+};
+
+export default InputForm;
