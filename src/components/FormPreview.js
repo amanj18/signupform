@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom'; 
 
-const FormPreview = (formdata) => {
+const FormPreview = () => {
+    const location = useLocation();
+    const formdata = location.state;
 
     return (
         <div>

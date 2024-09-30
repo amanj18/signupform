@@ -33,8 +33,7 @@ const InputForm = () => {
         <label>Password : </label>
         <input type="text" name="password" value={formData.password} onChange={handleChange} required/><br/>
 
-        <Link to="/preview" formdata={formData}>
-        {console.log(formData)}
+        <Link to="/preview" state={formData}>
             <Button />
         </Link>
     </form>
