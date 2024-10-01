@@ -11,10 +11,11 @@ const FormPreview = () => {
             <h4 className='heading'>Form Preview</h4>
         <div className="form-container">
             {formData ? (
-               <div className='user-data'> 
-                    <InputField label="Username" value={formData.username} />
-                    <InputField label="Email" value={formData.email} />
-                    <InputField label="Password" value={formData.password} />
+               <div > 
+                    <InputField label="Username" value={formData.username} disable={true}/>      
+                    <InputField label="Email" value={formData.email} disable={true}/>
+                    <InputField label="Password" value={formData.password} disable={true}/>
+                    
                </div> 
             ) 
             : (
