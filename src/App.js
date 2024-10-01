@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import InputForm from "./components/InputForm";
 import FormPreview from './components/FormPreview';
 import { FormProvider } from './FormContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (

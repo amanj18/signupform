@@ -1,0 +1,61 @@
+.form-container {
+    max-width: 400px;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #d2ebf4;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-container .error {
+    color: red;
+    font-size: 0.875em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.form-container .submit-btn {
+    width: 25%;
+    margin-left: 35%;
+    padding: 5px;
+    background-color: #589de6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.form-container .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.form-container span {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: -9em;
+    margin-left: 20em;
+    vertical-align: middle;
+}
+.icons{
+    margin-left: 21%;
+    margin-top: -50%;
+}
+.email-icons{
+    margin-left: 12%;
+    margin-top: -50%;
+}
+.heading{
+    margin-left: 45%;
+    margin-top: 5%;
+    font-size: 2em;
+}

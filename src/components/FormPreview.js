@@ -1,22 +1,27 @@
 import React, { useContext } from 'react';
 import { FormContext } from '../FormContext';
+import '../styles/InputForm.css';
+import InputField from './InputField';
 
 const FormPreview = () => {
     const { formData } = useContext(FormContext);
 
     return (
-        <div>
-            <h1>Form Preview</h1>
+        <>
+            <h4 className='heading'>Form Preview</h4>
+        <div className="form-container">
             {formData ? (
-                <div>
-                    <p><strong>Username:</strong> {formData.username}</p>
-                    <p><strong>Email:</strong> {formData.email}</p>
-                    <p><strong>Password:</strong> {formData.password}</p>
-                </div>
-            ) : (
-                <p>No form data available.</p>
+               <div className='user-data'> 
+                    <InputField label="Username" value={formData.username} />
+                    <InputField label="Email" value={formData.email} />
+                    <InputField label="Password" value={formData.password} />
+               </div> 
+            ) 
+            : (
+                <p className="no-data">No form data available.</p>
             )}
         </div>
+        </>
     );
 };
 
