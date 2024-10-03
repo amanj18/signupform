@@ -1,20 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import InputForm from "./components/InputForm";
-import FormPreview from './components/FormPreview';
-import { FormProvider } from './FormContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Routing2 from './components2/Routing2';
 
 const App = () => {
+
   return (
-    <FormProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<InputForm />} />
-          <Route path="/preview" element={<FormPreview />} />
-        </Routes>
-      </Router>
-    </FormProvider>
+      <Routing2 />
   );
 };
 

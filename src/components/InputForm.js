@@ -67,7 +67,7 @@ const InputForm = () => {
                         icon={BiSolidUser}
                         />
                     {errors.username && <p className="error">{errors.username.message}</p>}
-                </div><br />
+                </div><br/>
 
                 <div className="input-group">
                 <InputField

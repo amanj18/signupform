@@ -3,7 +3,7 @@ const InputField = ({ label,value , id, type, name, placeholder, register ,disab
     
   return (
     <div>
-      <label>{label}  {Icon && <Icon />} </label>
+      <label>{label}  {Icon && <Icon />} </label> 
       <input
         id ={id}
         type={type}
