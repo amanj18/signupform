@@ -1,15 +1,4 @@
 import React from 'react';
-
-// const InputField = ({label ,placeholder, name, type , value ,onChange , disable }) => {
-//   return (
-//     <>
-//         <label >{label}  </label>
-//         <input type={type} placeholder={placeholder} name={name} value={value} onChange={onChange} disabled={disable}/><br />
-
-//     </>
-//   )
-// }
-
 const InputField = ({ label,value , id, type, name, placeholder, register ,disable,icon: Icon}) => {
     
   return (
@@ -23,9 +12,7 @@ const InputField = ({ label,value , id, type, name, placeholder, register ,disab
         placeholder={placeholder}
         {...register(id)}
         disabled={disable}
-        
-      />
-      
+      />      
     </div>
 
   );
