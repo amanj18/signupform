@@ -12,6 +12,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { BiSolidUser } from "react-icons/bi";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import InputField from './InputField';
 
 const schema = yup.object().shape({
     username: yup.string().required('Username is required').min(4, 'Username must be at least 3 characters'),
@@ -23,7 +24,10 @@ const schema = yup.object().shape({
 });
 
 const InputForm = () => {
-    const { formData, setFormData } = useContext(FormContext);
+
+
+    const { setFormData } = useContext(FormContext);
+
     const [type, setType] = useState('password');
     const [icon, setIcon] = useState(eyeOff);
     
@@ -35,8 +39,7 @@ const InputForm = () => {
 
     const onSubmit = (data) => {
         setFormData(data);
-        console.log(data);
-        navigate('/preview', { state: data });
+        navigate('/preview');
     };
 
     const handleToggle = () => {
@@ -54,46 +57,47 @@ const InputForm = () => {
             <h4 className='heading'>Sign Up</h4>
             <form className='form-container' onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-group">
-                    <label>Username  <BiSolidUser/> </label>
-                    <input
-                        name="username"
+                <InputField
+                        id="username"
+                        label="Username"
                         type="text"
-                        placeholder="username"
-                        {...register('username')}
-                    />
+                        name="username"
+                        placeholder="Enter your username"
+                        register={register}
+                        icon={BiSolidUser}
+                        />
                     {errors.username && <p className="error">{errors.username.message}</p>}
-                </div>
-                <br />
+                </div><br />
 
                 <div className="input-group">
-                    <label>Email <IoMdMail/> </label>
-                    <input
-                        name="email"
-                        type="email"
-                        placeholder="email"
-                        {...register('email')}
-                    />
-                    {errors.email && <p className="error">{errors.email.message}</p>}
-                </div>
-                <br />
-
-                <div className="input-group">
-                    <label>Password <RiLockPasswordFill/> </label>
-                    <input
-                        name="password"
-                        type={type}
-                        placeholder="Password"
-                        {...register('password')}
+                <InputField
+                    id="email"
+                    label="Email"
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    register={register}
+                    icon={IoMdMail}
                     /> 
-                    {errors.password && <p className="error">{errors.password.message}</p>}
-                    
-                </div>
+                    {errors.email && <p className="error">{errors.email.message}</p>}
+                </div><br />
 
+                <div className="input-group">
+                <InputField
+                    id="password"
+                    label="Password"
+                    type={type}
+                    name="password"
+                    placeholder="Enter your password"
+                    register={register}
+                    icon={RiLockPasswordFill}
+                    />
+                    {errors.password && <p className="error">{errors.password.message}</p>}
                     <span onClick={handleToggle} className='toggle-icon'>
                         <Icon icon={icon} size={25} />
                     </span>
-                <br />
-                        
+
+                </div><br />
                 <Button type="submit" className="submit-btn" />
             </form>
         </>
@@ -101,3 +105,6 @@ const InputForm = () => {
 };
 
 export default InputForm;
+
+
+

@@ -40,25 +40,14 @@
     background-color: #0056b3;
 }
 
-.icons{
-    margin-left: 21%;
-    margin-top: -50%;
-}
-.email-icons{
-    margin-left: 12%;
-    margin-top: -50%;
-}
 .heading{
     margin-left: 45%;
     margin-top: 5%;
     font-size: 2em;
 }
 
- .toggle-icon{
-    position: absolute; 
-    z-index: 1;
-    cursor: pointer;
-    left: 61%;
-    bottom: 19%;
+ .input-group .toggle-icon{
+    margin-top: -3em !important;
+    margin-left: 15em !important;
  
 }
