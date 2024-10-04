@@ -1,18 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FormContext } from '../FormContext';
-import Button from './Button';
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
-import '../styles/InputForm.css';
 import { useForm } from 'react-hook-form';
 import { IoMdMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { BiSolidUser } from "react-icons/bi";
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 import InputField from './InputField';
+import Button from './Button';
+import * as yup from 'yup';
+import '../styles/InputForm.css';
 
 const schema = yup.object().shape({
     username: yup.string().required('Username is required').min(4, 'Username must be at least 3 characters'),

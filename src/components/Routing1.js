@@ -4,7 +4,7 @@ import InputForm from "./InputForm";
 import FormPreview from './FormPreview';
 import { FormProvider } from '../FormContext';
 
-const Routing = () => {
+const Routing1 = () => {
   return (
     <FormProvider>
     <Router>
@@ -17,4 +17,4 @@ const Routing = () => {
   )
 }
 
-export default Routing
+export default Routing1;

@@ -7,8 +7,8 @@ import { eye } from 'react-icons-kit/feather/eye';
 import { IoMdMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { BiSolidUser } from "react-icons/bi";
-import '../styles/InputForm.css';
 import { useNavigate } from 'react-router-dom';
+import '../styles/InputForm.css';
 
 const InputForm = ({ formData, setFormData }) => {
     const navigate = useNavigate();
