@@ -46,17 +46,35 @@
     font-size: 2em;
 }
 
- .input-group .toggle-icon{
-    margin-top: -3em !important;
-    margin-left: 15em !important;
- 
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
 }
-.input-group{
-    width: 100% !important;
+
+.input-field {
+    position: relative;
+    width: 100%;
+}
+
+.input-field input {
+    width: 100%;
+    padding-right: 2.5rem; 
+}
+
+.toggle-icon {
+    position: absolute;
+    top: 60%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
 .error-message {
     color: red;
     font-size: 0.875em;
-    margin-top: 0.25em;
+    /* margin-top: 0.25em; */
+    position: absolute;
+    bottom: -1.9rem; 
+    left: 0;
 }
+ 

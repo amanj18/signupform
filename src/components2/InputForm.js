@@ -88,6 +88,7 @@ const InputForm = ({ formData, setFormData }) => {
         <>
             <h4 className='heading'>Sign Up</h4>
             <form className='form-container' >
+            <div className="input-group">
                     <InputField
                         label="Username"
                         type="text"
@@ -101,8 +102,8 @@ const InputForm = ({ formData, setFormData }) => {
                         error={errors.username}
                         require={true}
                     />
-                <br/>
-
+                </div><br/>
+                <div className="input-group">
                     <InputField
                         label="Email"
                         type="email"
@@ -115,8 +116,7 @@ const InputForm = ({ formData, setFormData }) => {
                         icon={IoMdMail}
                         error={errors.email}
                         require={true}
-                    />
-                <br />
+                    /></div><br/>
 
                 <div className="input-group">
                     <InputField
