@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { FormContext } from '../FormContext';
 import '../styles/InputForm.css';
-import InputField from './InputField';
+import InputField from '../ReusableComponents/InputField';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 

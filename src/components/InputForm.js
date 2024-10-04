@@ -9,13 +9,13 @@ import { IoMdMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { BiSolidUser } from "react-icons/bi";
 import { yupResolver } from '@hookform/resolvers/yup';
-import InputField from './InputField';
-import Button from './Button';
+import InputField from '../ReusableComponents/InputField';
+import Button from '../ReusableComponents/Button';
 import * as yup from 'yup';
 import '../styles/InputForm.css';
 
 const schema = yup.object().shape({
-    username: yup.string().required('Username is required').min(4, 'Username must be at least 3 characters'),
+    username: yup.string().required('Username is required').min(4, 'Username must be at least 4 characters'),
     email: yup.string().email('Invalid email address').required('Email is required').matches(/[@]+/ , 'Is not in correct format'),
     password: yup.string().required('Password is required').matches(
         /^(?=.*[A-Za-z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
@@ -61,12 +61,11 @@ const InputForm = () => {
                         id="username"
                         label="Username"
                         type="text"
-                        name="username"
                         placeholder="Enter your username"
                         register={register}
+                        error={errors.username}
                         icon={BiSolidUser}
                         />
-                    {errors.username && <p className="error">{errors.username.message}</p>}
                 </div><br/>
 
                 <div className="input-group">
@@ -74,12 +73,11 @@ const InputForm = () => {
                     id="email"
                     label="Email"
                     type="email"
-                    name="email"
                     placeholder="Enter your email"
                     register={register}
+                    error={errors.email}
                     icon={IoMdMail}
                     /> 
-                    {errors.email && <p className="error">{errors.email.message}</p>}
                 </div><br />
 
                 <div className="input-group">
@@ -87,12 +85,11 @@ const InputForm = () => {
                     id="password"
                     label="Password"
                     type={type}
-                    name="password"
+                    error={errors.password}
                     placeholder="Enter your password"
                     register={register}
                     icon={RiLockPasswordFill}
                     />
-                    {errors.password && <p className="error">{errors.password.message}</p>}
                     <span onClick={handleToggle} className='toggle-icon'>
                         <Icon icon={icon} size={25} />
                     </span>
